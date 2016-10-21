@@ -39,13 +39,13 @@ public class Excel2Json {
 				Cell cell = row0.getCell(j);
 				String cellString = cell.getStringCellValue().toLowerCase();
 				if (cellString.equals(GROUP_ID_STRING)) {
-					groupIdIndex = 0;
+					groupIdIndex = j;
 					isRow0Header = true;
 				} else if (cellString.equals(ARTIFACT_ID_STRING)) {
-					artifactIdIndex = 1;
+					artifactIdIndex = j;
 					isRow0Header = true;
 				} else if (cellString.equals(VERSION_STRING)) {
-					versionIndex = 2;
+					versionIndex = j;
 					isRow0Header = true;
 				}
 			}

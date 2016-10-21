@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import org.apache.poi.EncryptedDocumentException;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
+import org.junit.Assert;
 import org.junit.Test;
 import junit.framework.TestCase;
 
@@ -40,6 +41,7 @@ public class Excel2JsonTest extends TestCase {
 			String jsonString = excel2Json.getData();
 			String formatString = jsonString.replace(",", ",\n");
 			System.out.println(formatString);
+			Assert.assertNotNull(formatString);
 		} catch (EncryptedDocumentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
