@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 import net.sf.json.JSONObject;
@@ -28,10 +29,11 @@ public class Bean2JsonTest {
 		cardNum.add("建行");
 		bean.setCardNum(cardNum);
 		JSONObject jsonObject = JSONObject.fromObject(bean);
+		Assert.assertNotNull(jsonObject);
 		System.out.println(jsonObject);
 	}
 
-	public class Mybean {
+	public static class Mybean {
 		private String id;
 		private String name;
 		private Date date;
